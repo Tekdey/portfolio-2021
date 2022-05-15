@@ -14,6 +14,9 @@ const V_ContainerOrange = {
   animate: {
     height: "50vh",
   },
+  exit: {
+    height: "0"
+  }
 };
 const V_ContainerBlack = {
   initial: {
@@ -21,6 +24,9 @@ const V_ContainerBlack = {
   },
   animate: {
     height: "50vh",
+  },
+  exit: {
+    height: "100vh",
   },
 };
 const V_NavTop = {
@@ -93,7 +99,7 @@ const NavTransition = {
 
 const Home = () => {
   return (
-    <motion.div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen">
       <Logo />
       {/*
        *       Main div
@@ -175,14 +181,16 @@ const Home = () => {
         variants={V_ContainerOrange}
         initial="initial"
         animate="animate"
+        exit="exit"
       ></motion.div>
       <motion.div
         className="bg-black"
         variants={V_ContainerBlack}
         initial="initial"
         animate="animate"
+        exit="exit"
       ></motion.div>
-    </motion.div>
+    </div>
   );
 };
 
