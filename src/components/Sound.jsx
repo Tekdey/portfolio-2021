@@ -15,7 +15,7 @@ const Sound = () => {
       setIsPlaying((_) => !_);
       isPlaying ? stop() : play();
     }}
-    className="absolute z-10 mx-3 my-2"
+    className="absolute z-10 left-0 pl-5"
   >
     {
         isPlaying ? 

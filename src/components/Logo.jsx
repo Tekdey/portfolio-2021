@@ -14,6 +14,12 @@ const V_Logo = {
       x: "-50%",
       y: "-50%",
     },
+    hover: {
+      scale: 0.9
+    },
+    tap: {
+      scale: 1.2,
+    },
     exit: {
       scale: 0,
       transition: { ease: "easeInOut" },
@@ -41,6 +47,8 @@ const Logo = ({handleStart, start}) => {
             draggable="false"
             onClick={handleStart}
             variants={V_Logo}
+            whileHover="hover"
+            whileTap="tap"
             initial="initial"
             animate="visible"
             exit="exit"

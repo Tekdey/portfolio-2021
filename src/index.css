@@ -10,4 +10,7 @@
         font-family: 'Poppins', sans-serif;
         @apply bg-red-900
     }
+    body{
+        @apply overflow-hidden
+    }
 }
