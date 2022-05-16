@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import {useNavigate} from "react-router-dom"
 import Panda from "../assets/images/panda.png"
 import {Card} from "../card"
-import astro from "../assets/images/astronaute.jpg"
 
 import { motion } from "framer-motion";
 
@@ -172,7 +171,7 @@ const Work = () => {
             exit="exit"
         ></motion.div>
         <motion.div
-        className="bg-white z-40 overflow-y-scroll overflow-x-hidden flex flex-wrap justify-center gap-5 p-20" 
+        className="bg-white z-40 overflow-y-scroll overflow-x-hidden flex flex-wrap justify-center pt-20 sm:p-20 gap-5" 
         variants={V_ContainerWhite}
         initial="initial"
         animate="animate"

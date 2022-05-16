@@ -166,7 +166,7 @@ const Home = () => {
           <Link to="/work" draggable="false">
             Work
           </Link>
-          <Link to="#" draggable="false">
+          <Link to="/skills" draggable="false">
             Skills
           </Link>
         </motion.div>
