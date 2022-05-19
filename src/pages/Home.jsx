@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
@@ -98,6 +98,11 @@ const NavTransition = {
 }
 
 const Home = () => {
+
+  useEffect(() => {
+    console.log('Hello');
+  },[])
+
   return (
     <div className="flex flex-col h-screen">
       <Logo />
