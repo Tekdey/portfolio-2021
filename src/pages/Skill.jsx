@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import Panda from "../assets/images/panda.png";
+import {SkillBackData} from "../skill_back"
+import {SkillFrontData} from "../skill_front"
 
 
 const Skill = () => {
 
   const navigate = useNavigate()
   const [isFront, setIsFront] = useState(null)
-  const [smallDevice, setSmallDevice] = useState(window.innerWidth < 768 ? true : false)
+  const [smallDevice, setSmallDevice] = useState(window.innerWidth <= 768 ? true : false)
 
 
   useEffect(() => {
 
     function listenResize() {
-      window.innerWidth < 768 ? setSmallDevice(true) : setSmallDevice(false)
+      window.innerWidth <= 768 ? setSmallDevice(true) : setSmallDevice(false)
     }
     window.addEventListener('resize', listenResize)
 
@@ -22,9 +24,7 @@ const Skill = () => {
       window.removeEventListener('resize', listenResize)
     )
   }, [])
-
-  console.log(smallDevice);
-
+   
   return (
       <div className="flex flex-col">
         {/* 
@@ -190,8 +190,8 @@ const Skill = () => {
           
         } }
         >
-            <div className=" border-4 w-full h-full flex flex-col md:flex-row  ">
-                <div className="md:block  flex justify-center items-center w-full h-full">
+            <div className={smallDevice ? "border-4 w-full h-full flex flex-col" : "border-4 w-full h-full flex flex-row"}>
+                <div className={smallDevice ? "flex justify-center items-center w-full h-full" : "block justify-center items-center w-full h-full"}>
                   <h1 className="text-center text-5xl relative md:-translate-y-1/2">
                    { smallDevice ?
                       <Link to="/skills/smallScreen" className="md:bg-black md:px-5 " onClick={() =>{
@@ -202,8 +202,32 @@ const Skill = () => {
                       <span className="md:bg-black md:px-5 ">Front</span>
                     }
                   </h1>
+                  { !smallDevice &&
+                    <motion.ul className="w-full flex flex-col p-10"
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1, transition: {delay: 2.5, duration: 1}}}
+                    >
+                      {
+                        SkillFrontData.map((item, index) => {
+                          return (
+                            <li className="flex py-1 text-xl flex-col w-full">
+                            <h4 className=" min-w-[200px]">{item.name}</h4>
+                              <motion.div 
+                              key={index} 
+                              className="w-24 h-7 bg-white flex justify-center items-center"
+                              initial={{width: 0}}
+                              animate={{width: (item.knowledge - 10) + "%", transition:{delay: 3 + index / 5, duration: 0.5}}}
+                              >
+                                <span className="text-black" >{item.knowledge} %</span>
+                              </motion.div>
+                          </li>
+                          )
+                        })
+                      }
+                    </motion.ul>
+                  }
                 </div>
-                <div className="md:block flex justify-center items-center w-full h-full">
+                <div className={smallDevice ? "flex justify-center items-center w-full h-full" : "block justify-center items-center w-full h-full"}>
                   <h1 className="text-center text-5xl relative md:-translate-y-1/2">
                   { smallDevice ?
                     <Link to="/skills/smallScreen" className="md:bg-black md:px-5" onClick={() => {
@@ -214,6 +238,30 @@ const Skill = () => {
                     <span className="md:bg-black md:px-5 ">Back</span>
                   }
                   </h1>
+                  { !smallDevice &&
+                  <motion.ul className="w-full flex flex-col items-end p-10"
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1, transition: {delay: 2.5, duration: 1}}}
+                  >
+                      {
+                        SkillBackData.map((item, index) => {
+                          return (
+                            <li className="flex py-1 text-xl flex-col w-full items-end">
+                            <h4 className=" min-w-[150px] items-end flex justify-end">{item.name}</h4>
+                              <motion.div 
+                              key={index} 
+                              className="w-24 h-7 bg-white flex justify-center items-center "
+                              initial={{width: 0}}
+                              animate={{width: (item.knowledge - 10) + "%", transition:{delay: 3 + index / 5, duration: 0.5}}}
+                              >
+                                <span className="text-black" >{item.knowledge} %</span>
+                              </motion.div>
+                          </li>
+                          )
+                        })
+                      }
+                    </motion.ul>
+                }
                 </div>
             </div>    
         </motion.section>

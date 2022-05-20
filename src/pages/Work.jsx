@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import {useNavigate} from "react-router-dom"
 import Panda from "../assets/images/panda.png"
-import {Card} from "../card"
+import {WorkData} from "../work_data"
+import LinkButton from "../components/LinkButton"
 
 import { motion } from "framer-motion";
 
@@ -177,9 +178,10 @@ const Work = () => {
         animate="animate"
         exit="exit"
       >
-        {Card.map((card, index) => {
+        {WorkData.map((card, index) => {
                 return (
-                    <motion.article  
+                  <LinkButton href={card.href} externalLink={true} target={true} >
+                    <motion.article 
                     ref={ref} 
                     key={index} 
                     className="h-[300px] w-[300px] drop-shadow-lg" 
@@ -189,7 +191,6 @@ const Work = () => {
                     animate="visible"
                     exit="exit"
                     custom={index}
-                    onClick={() => handleClick(card.href)}
                     >
                         <motion.div 
                         className=" border-8 border-black h-full overflow-hidden"
@@ -198,29 +199,30 @@ const Work = () => {
                         animate="visible"
                         whileHover="hover"
                         style={{
-                            backgroundImage: `url(${card.image})`,
-                            backgroundPosition: 'center',
-                            backgroundSize: "cover",
+                          backgroundImage: `url(${card.image})`,
+                          backgroundPosition: 'center',
+                          backgroundSize: "cover",
                         }}
                         >
                             <motion.div 
                             className="h-full flex justify-around flex-col items-center relative text-2xl cursor-pointer"
                             initial={{opacity: 0}}
                             animate={{
-                                opacity: 1, 
-                                background: "rgba(0, 0, 0, 0.226)",
+                              opacity: 1, 
+                              background: "rgba(0, 0, 0, 0.226)",
                             }}
                             whileHover={{
-                                opacity: 0, 
-                                background: "none",
+                              opacity: 0, 
+                              background: "none",
                             }}
                             >
-                                <h3>{card.title}</h3>
-                                <p>{card.description}</p>
-                                <span>{card.date}</span>
+                                <h3 className="font-semibold text-3xl text-stone-200">{card.title}</h3>
+                                <p className="text-center bg-black bg-opacity-30 text-stone-200">{card.description}</p>
+                                <span className=" text-stone-200">{card.date}</span>
                             </motion.div>
                         </motion.div>
                     </motion.article>
+              </LinkButton>
                 )
             })}
 

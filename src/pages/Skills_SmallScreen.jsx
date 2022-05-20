@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import Panda from "../assets/images/panda.png";
+import { SkillFrontData } from "../skill_front";
+import { SkillBackData } from "../skill_back";
 
 
 const SkillBack = () => {
@@ -145,7 +147,47 @@ const SkillBack = () => {
           {
              //             Contenu
           }
+         
+            <motion.ul className="w-full flex flex-col p-10 mix-blend-difference "
+            initial={{opacity: 0}}
+            animate={{opacity: 1, transition: {duration: 1}}}
+            >
+               { isFront ? (
+                        SkillFrontData.map((item, index) => {
+                          return (
+                            <li className="flex py-1 text-xl flex-col">
+                            <h4 className=" min-w-[153px] text-white">{item.name}</h4>
+                              <motion.div 
+                              key={index} 
+                              className="w-24 h-7 bg-white flex justify-center items-center"
+                              initial={{width: 0}}
+                              animate={{width: (item.knowledge - 10) + "%", transition:{delay: 0.001 + index / 5, duration: 0.5}}}
+                              >
+                                <span className="text-black" >{item.knowledge} %</span>
+                              </motion.div>
+                          </li>
+                          )
+                        })
+                        ):(
 
+                        SkillBackData.map((item, index) => {
+                          return (
+                            <li className="flex py-1 text-xl flex-col">
+                            <h4 className=" min-w-[153px] text-white">{item.name}</h4>
+                              <motion.div 
+                              key={index} 
+                              className="w-24 h-7 bg-white flex justify-center items-center"
+                              initial={{width: 0}}
+                              animate={{width: (item.knowledge - 10) + "%", transition:{delay: 0.001 + index / 5, duration: 0.5}}}
+                              >
+                                <span className="text-black" >{item.knowledge} %</span>
+                              </motion.div>
+                          </li>
+                          )
+                        })
+                          
+                          )}
+                    </motion.ul>
         </motion.div>
         {/* 
         *                         Square layer (Back & White) 

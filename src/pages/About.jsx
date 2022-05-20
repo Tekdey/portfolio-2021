@@ -149,7 +149,7 @@ const Work = () => {
             exit="exit"
         ></motion.div>
         <motion.section
-            className="bg-white z-40 pt-20 sm:p-20 flex gap-5" 
+            className="bg-white z-40 pt-20 md:p-20 flex gap-5 justify-center" 
             variants={V_ContainerWhite}
             initial="initial"
             animate="animate"
@@ -164,9 +164,9 @@ const Work = () => {
                 className="border-3 border-black drop-shadow-lg bg-white p-5 flex flex-col items-start
                 leading-loose text-sm 
                 md:leading-loose md:text-lg 
-                lg:leading-loose lg:text-2xl 
+                lg:leading-loose lg:text-xl 
                 xl:leading-loose xl:text-xl 
-                2xl:leading-loose 2xl:text-2xl"
+                2xl:leading-loose 2xl:text-xl"
                
                 >
                 <h3 className="p-3 font-semibold self-center text-center">Hey I'm <span className=" font-bold">Nathan Bardi</span>, a developer located in France. </h3>
@@ -177,12 +177,14 @@ const Work = () => {
 
                 <p> I like to write tutorial blogs to help people who want to learn to code. </p>
                 
-                <p className="p-5 self-center text-center">You can contact me by <LinkButton className="underline" href="mailto:devw.nbardi@gmail.com">email</LinkButton> or my <span className="underline cursor-pointer" onClick={handleClick}>social network</span>.</p>
-                  <div className={social ? "flex gap-10 w-full justify-center border-b-8 border-red-700" : "flex gap-10 w-full justify-center"}>
+                <p className="p-5 self-center text-center">You can contact me by <LinkButton className="underline" href="mailto:devw.nbardi@gmail.com" externalLink={true}>email</LinkButton> or my <span className="underline cursor-pointer" onClick={handleClick}>social network</span>.</p>
+                  <div className="justify-center flex w-full">
+                      <div className={social ? "flex gap-10 justify-center border-b-2 border-red-700" : "flex gap-10 w-full justify-center"}>
                       <LinkButton className="w-10" target={true} href="https://github.com/Tekdey" src={GithubLogo} alt="github" draggable="false" externalLink={true} />
                       <LinkButton className="w-10" target={true} href="https://twitter.com/BardiNathan" src={TwitterLogo} alt="twitter" draggable="false" externalLink={true}/>
                       <LinkButton className="w-10" target={true} href="#" src={LinkedinLogo} alt="linkedin" draggable="false" externalLink={true} />
                       <LinkButton className="w-10" target={true} href="https://www.youtube.com/channel/UC80SONzT-LFpHFpYoJigBfQ" src={YoutubeLogo} alt="youtube" draggable="false" externalLink={true} />
+                      </div>
                   </div>
                 </motion.div>
                 <motion.img  
@@ -191,8 +193,7 @@ const Work = () => {
                     src={Astronaut} alt="pp" 
                     className="object-cover 
                     hidden
-                    xl:block xl:h-full xl:w-96
-                    Zxl:h-full 2xl:w-auto
+                    xl:block xl:h-full xl:w-3/12
                     " 
                 
                 />

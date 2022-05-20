@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
-import ButtonMailto from "../components/LinkButton";
 import { svg } from "../assets/svg";
 import Logo from "../components/Logo";
 import Sound from "../components/Sound";
@@ -119,28 +118,30 @@ const Home = () => {
           <Sound />
           <LinkButton
             className="absolute z-10 right-0 text-2xl px-5 py-2"
-            label={svg.mail}
+            src={svg.mail}
             mailto="mailto:devw.nbardi@gmail.com"
+            externalLink={true}
           />
-          <Link to="/" className="relative z-10">
-            <img src={svg.home} alt="home" />
-          </Link>
+          
+          <LinkButton href="/" className="relative z-10" alt="home" src={svg.home} externalLink={false}/>
+
         </motion.div>
         <motion.div 
-        className="h-screen text-orange-500 text-2xl justify-center items-center flex py-5 absolute left-0"
-        variants={V_NavLeft}
+          className="h-screen text-orange-500 text-2xl justify-center items-center flex py-5 absolute left-0"
+          variants={V_NavLeft}
           initial="initial"
           animate="animate"
           exit="exit"
           transition={NavTransition}
         >
-          <Link
-            to="/about"
+          <LinkButton
+            href="/about"
             className="-rotate-90 mix-blend-difference"
             draggable="false"
+            externalLink={false}
           >
             About
-          </Link>
+          </LinkButton>
         </motion.div>
         <motion.div 
         className="h-screen text-orange-500 text-2xl justify-center items-center flex py-5 absolute right-0"
@@ -150,13 +151,14 @@ const Home = () => {
           exit="exit"
           transition={NavTransition}
         >
-          <Link
-            to="#"
+          <LinkButton
+            href="/tutorial"
             className=" rotate-90 mix-blend-difference"
             draggable="false"
+            externalLink={false}
           >
             Tutorial
-          </Link>
+          </LinkButton>
         </motion.div>
         <motion.div 
         className="w-screen text-orange-500 text-2xl justify-around items-center flex py-5 absolute bottom-0"
@@ -166,12 +168,12 @@ const Home = () => {
           exit="exit"
           transition={NavTransition}
         >
-          <Link to="/work" draggable="false">
+          <LinkButton href="/work" draggable="false" externalLink={false}>
             Work
-          </Link>
-          <Link to="/skills" draggable="false">
+          </LinkButton>
+          <LinkButton href="/skills" draggable="false" externalLink={false}>
             Skills
-          </Link>
+          </LinkButton>
         </motion.div>
       </div>
 
