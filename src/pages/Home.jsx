@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
-import ButtonMailto from "../components/ButtonMailto";
+import ButtonMailto from "../components/LinkButton";
 import { svg } from "../assets/svg";
 import Logo from "../components/Logo";
 import Sound from "../components/Sound";
+import LinkButton from "../components/LinkButton";
 
 const V_ContainerOrange = {
   initial: {
@@ -99,10 +100,6 @@ const NavTransition = {
 
 const Home = () => {
 
-  useEffect(() => {
-    console.log('Hello');
-  },[])
-
   return (
     <div className="flex flex-col h-screen">
       <Logo />
@@ -120,7 +117,8 @@ const Home = () => {
           transition={NavTransition}
         >
           <Sound />
-          <ButtonMailto
+          <LinkButton
+            className="absolute z-10 right-0 text-2xl px-5 py-2"
             label={svg.mail}
             mailto="mailto:devw.nbardi@gmail.com"
           />
@@ -137,7 +135,7 @@ const Home = () => {
           transition={NavTransition}
         >
           <Link
-            to="#"
+            to="/about"
             className="-rotate-90 mix-blend-difference"
             draggable="false"
           >
