@@ -121,11 +121,6 @@ const Work = () => {
     const navigate = useNavigate()
     const ref = useRef()
 
-    const handleClick = (href) => {
-        navigate(href)
-    }
-
-
   return (
         <div className="bg-black h-screen">
 

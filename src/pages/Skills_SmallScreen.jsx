@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import { motion } from "framer-motion";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Panda from "../assets/images/panda.png";
 import { SkillFrontData } from "../skill_front";
 import { SkillBackData } from "../skill_back";
@@ -36,7 +36,7 @@ const SkillBack = () => {
   console.log(isFront);
 
   return (
-      <div className="flex flex-col">
+      <div className="flex flex-col h-screen w-screen">
         {/* 
         *                         First Layer (Orange) 
         */}
@@ -136,7 +136,7 @@ const SkillBack = () => {
               with: "100vw",
             }}
             animate={{
-            height: "91vh",
+            height: "100vh",
             with: "100vw",
               
           }}
@@ -148,7 +148,7 @@ const SkillBack = () => {
              //             Contenu
           }
          
-            <motion.ul className="w-full flex flex-col p-10 mix-blend-difference "
+            <motion.ul className="w-full flex flex-col p-10 mix-blend-difference"
             initial={{opacity: 0}}
             animate={{opacity: 1, transition: {duration: 1}}}
             >
@@ -209,7 +209,7 @@ const SkillBack = () => {
 
         {smallDevice && (   
         <motion.nav 
-        className="w-full bottom-0 absolute border-t-4 border-black  bg-black"
+        className="w-full bottom-0 fixed border-t-4 border-black  bg-black"
         initial={{
           height: "0"
         }}

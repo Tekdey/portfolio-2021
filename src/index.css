@@ -8,9 +8,9 @@
 @layer base{
     html{
         font-family: 'Poppins', sans-serif;
-        @apply bg-red-900
+        @apply bg-white
     }
     body{
-        @apply overflow-hidden
+        @apply xs:overflow-hidden
     }
 }

@@ -149,19 +149,17 @@ const Work = () => {
             exit="exit"
         ></motion.div>
         <motion.section
-            className="bg-white z-40 pt-20 md:p-20 flex gap-5 justify-center" 
+            className="z-40 md:p-20 flex bg-white" 
             variants={V_ContainerWhite}
             initial="initial"
             animate="animate"
             exit="exit"
         >
-          <article className=" flex
-                ">
-
+          <article className="flex">
                 <motion.div 
                 initial={{opacity: 0}} 
                 animate={{opacity:1, transition:{delay: 1}}} 
-                className="border-3 border-black drop-shadow-lg bg-white p-5 flex flex-col items-start
+                className="border-3 border-black sm:drop-shadow-lg p-5 flex flex-col items-start justify-center bg-white
                 leading-loose text-sm 
                 md:leading-loose md:text-lg 
                 lg:leading-loose lg:text-xl 

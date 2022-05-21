@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import Panda from "../assets/images/panda.png";
 import {SkillBackData} from "../skill_back"
 import {SkillFrontData} from "../skill_front"
+import { unmountComponentAtNode } from "react-dom";
 
 
 const Skill = () => {
@@ -12,9 +13,7 @@ const Skill = () => {
   const [isFront, setIsFront] = useState(null)
   const [smallDevice, setSmallDevice] = useState(window.innerWidth <= 768 ? true : false)
 
-
   useEffect(() => {
-
     function listenResize() {
       window.innerWidth <= 768 ? setSmallDevice(true) : setSmallDevice(false)
     }
@@ -26,7 +25,7 @@ const Skill = () => {
   }, [])
    
   return (
-      <div className="flex flex-col">
+      <div className="flex flex-col h-full w-full">
         {/* 
         *                         First Layer (Orange) 
         */}
@@ -107,7 +106,7 @@ const Skill = () => {
               height: "100vh",
               width: "100vw",
             } : {
-
+                
             }
             }>
         </motion.div>
@@ -133,7 +132,7 @@ const Skill = () => {
               top: "50%",
               left: "0",
               width: "100vw",
-              height: ["1vh", "50vh"],
+              height: ["1vh", "100vh"],
               transition: {
                 times: [0.5, 1],
             }
