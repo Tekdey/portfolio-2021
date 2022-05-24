@@ -7,6 +7,7 @@ import Work from "./pages/Work";
 import Skill from "./pages/Skill";
 import SkillsSmallScreen from "./pages/Skills_SmallScreen";
 import About from "./pages/About";
+import Tutorial from "./pages/Tutorial";
 
 const App = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/skills" element={<Skill />} />
           <Route path="/skills/smallScreen" element={<SkillsSmallScreen />} />
           <Route path="/about" element={<About />} />
+          <Route path="/tutorial" element={<Tutorial />} />
         </Routes>
       </AnimatePresence>
     </>

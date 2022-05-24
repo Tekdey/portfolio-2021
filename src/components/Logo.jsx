@@ -35,8 +35,6 @@ const Logo = ({handleStart, start}) => {
         setStart(start)
     }, [start])
 
-    console.log(startx);
-
   return (
           <motion.img
             src={Panda}

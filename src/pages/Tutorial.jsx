@@ -116,7 +116,8 @@ const V_ContainerOrange = {
   }
 
 
-const Work = () => {
+const Tutorial = () => {
+
 
     const navigate = useNavigate()
     const ref = useRef()
@@ -146,7 +147,7 @@ const Work = () => {
                 variants={V_Title} 
                 initial="initial" 
                 animate="animate"
-                exit="exit">Work</motion.h1>
+                exit="exit">Tutorial</motion.h1>
         </header>
 
         {/*
@@ -173,11 +174,15 @@ const Work = () => {
         animate="animate"
         exit="exit"
       >
-        {WorkData.map((card, index) => {
+        
+        {
+          WorkData.length > 0 ? (
+        WorkData.map((card, index) => {
                 return (
-                  <LinkButton key={index} href={card.href} externalLink={true} target={true} >
+                  <LinkButton href={card.href} externalLink={true} target={true} >
                     <motion.article 
-                    ref={ref}  
+                    ref={ref} 
+                    key={index} 
                     className="h-[300px] w-[300px] drop-shadow-lg" 
                     variants={V_Article}
                     whileHover="hover"
@@ -218,11 +223,11 @@ const Work = () => {
                     </motion.article>
               </LinkButton>
                 )
-            })}
+            })) : <p>Coming soon ...</p> }
 
       </motion.div>
       </div>
   )
 };
 
-export default Work;
+export default Tutorial;

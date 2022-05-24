@@ -7,8 +7,6 @@ const Sound = () => {
     const [isPlaying, setIsPlaying] = useState(false);
   const [play, { stop }] = useSound(Audio, { volume: 0.5 });
 
-  console.log(isPlaying);
-
 
   return (<button
     onClick={() => {

@@ -118,7 +118,7 @@ const Home = () => {
             className="absolute z-10 right-0 text-2xl px-5 py-2"
             src={svg.mail}
             mailto="mailto:devw.nbardi@gmail.com"
-            externalLink={true}
+            externalLink={false}
           />
           
           <LinkButton href="/" className="relative z-10" alt="home" src={svg.home} externalLink={false}/>

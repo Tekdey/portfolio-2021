@@ -209,10 +209,9 @@ const Skill = () => {
                       {
                         SkillFrontData.map((item, index) => {
                           return (
-                            <li className="flex py-1 text-xl flex-col w-full">
+                            <li key={index} className="flex py-1 text-xl flex-col w-full">
                             <h4 className=" min-w-[200px]">{item.name}</h4>
                               <motion.div 
-                              key={index} 
                               className="w-24 h-7 bg-white flex justify-center items-center"
                               initial={{width: 0}}
                               animate={{width: (item.knowledge - 10) + "%", transition:{delay: 3 + index / 5, duration: 0.5}}}
@@ -245,10 +244,9 @@ const Skill = () => {
                       {
                         SkillBackData.map((item, index) => {
                           return (
-                            <li className="flex py-1 text-xl flex-col w-full items-end">
+                            <li key={index} className="flex py-1 text-xl flex-col w-full items-end">
                             <h4 className=" min-w-[150px] items-end flex justify-end">{item.name}</h4>
                               <motion.div 
-                              key={index} 
                               className="w-24 h-7 bg-white flex justify-center items-center "
                               initial={{width: 0}}
                               animate={{width: (item.knowledge - 10) + "%", transition:{delay: 3 + index / 5, duration: 0.5}}}

@@ -17,10 +17,7 @@ const SkillBack = () => {
 
   useEffect(() => {
     localStorage.clear()
-    
-    // if(!smallDevice){
-    //   navigate('/skills')
-    // }
+
     function listenResize() {
         window.innerWidth < 768 ? setSmallDevice(true) : navigate('/skills')
     }
@@ -32,8 +29,6 @@ const SkillBack = () => {
 
   }, [navigate, smallDevice])
 
-
-  console.log(isFront);
 
   return (
       <div className="flex flex-col h-screen w-screen">
@@ -141,7 +136,7 @@ const SkillBack = () => {
               
           }}
             exit={{
-              // width: "0",
+              height: "0",
             }}
         >
           {
@@ -151,14 +146,14 @@ const SkillBack = () => {
             <motion.ul className="w-full flex flex-col p-10 mix-blend-difference"
             initial={{opacity: 0}}
             animate={{opacity: 1, transition: {duration: 1}}}
+            exit={{display: "none"}}
             >
                { isFront ? (
                         SkillFrontData.map((item, index) => {
                           return (
-                            <li className="flex py-1 text-xl flex-col">
+                            <li key={index} className="flex py-1 text-xl flex-col">
                             <h4 className=" min-w-[153px] text-white">{item.name}</h4>
                               <motion.div 
-                              key={index} 
                               className="w-24 h-7 bg-white flex justify-center items-center"
                               initial={{width: 0}}
                               animate={{width: (item.knowledge - 10) + "%", transition:{delay: 0.001 + index / 5, duration: 0.5}}}
@@ -172,10 +167,9 @@ const SkillBack = () => {
 
                         SkillBackData.map((item, index) => {
                           return (
-                            <li className="flex py-1 text-xl flex-col">
+                            <li key={index} className="flex py-1 text-xl flex-col">
                             <h4 className=" min-w-[153px] text-white">{item.name}</h4>
                               <motion.div 
-                              key={index} 
                               className="w-24 h-7 bg-white flex justify-center items-center"
                               initial={{width: 0}}
                               animate={{width: (item.knowledge - 10) + "%", transition:{delay: 0.001 + index / 5, duration: 0.5}}}
