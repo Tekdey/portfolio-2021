@@ -180,7 +180,7 @@ const Work = () => {
                       <div className={social ? "flex gap-10 justify-center border-b-2 border-red-700" : "flex gap-10 w-full justify-center"}>
                       <LinkButton className="w-10" target={true} href="https://github.com/Tekdey" src={GithubLogo} alt="github" draggable="false" externalLink={true} />
                       <LinkButton className="w-10" target={true} href="https://twitter.com/BardiNathan" src={TwitterLogo} alt="twitter" draggable="false" externalLink={true}/>
-                      <LinkButton className="w-10" target={true} href="#" src={LinkedinLogo} alt="linkedin" draggable="false" externalLink={true} />
+                      <LinkButton className="w-10" target={true} href="https://www.linkedin.com/in/nathan-bardi/" src={LinkedinLogo} alt="linkedin" draggable="false" externalLink={true} />
                       <LinkButton className="w-10" target={true} href="https://www.youtube.com/channel/UC80SONzT-LFpHFpYoJigBfQ" src={YoutubeLogo} alt="youtube" draggable="false" externalLink={true} />
                       </div>
                   </div>

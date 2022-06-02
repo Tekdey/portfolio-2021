@@ -12,7 +12,7 @@ export const SkillFrontData = [
   {
     speciality: "Front",
     name: "Javascript",
-    knowledge: 70,
+    knowledge: 85,
   },
   {
     speciality: "Front",
@@ -27,11 +27,21 @@ export const SkillFrontData = [
   {
     speciality: "Front",
     name: "Framer-motion",
-    knowledge: 65,
+    knowledge: 70,
   },
   {
     speciality: "Front",
     name: "Redux",
     knowledge: 65,
+  },
+  {
+    speciality: "Front",
+    name: "React-query",
+    knowledge: 75,
+  },
+  {
+    speciality: "Front",
+    name: "React-relay",
+    knowledge: 75,
   },
 ];

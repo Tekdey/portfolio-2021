@@ -2,7 +2,7 @@ export const SkillBackData = [
   {
     speciality: "Back",
     name: "Javascript",
-    knowledge: 70,
+    knowledge: 85,
   },
   {
     speciality: "Back",
@@ -21,8 +21,8 @@ export const SkillBackData = [
   },
   {
     speciality: "Back",
-    name: "Authentication",
-    knowledge: 60,
+    name: "Graph-QL",
+    knowledge: 75,
   },
   {
     speciality: "Back",
@@ -37,11 +37,11 @@ export const SkillBackData = [
   {
     speciality: "Back",
     name: "Sequelize",
-    knowledge: 45,
+    knowledge: 50,
   },
   {
     speciality: "Back",
     name: "Postgres",
-    knowledge: 45,
+    knowledge: 60,
   },
 ];
