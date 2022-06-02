@@ -8,12 +8,14 @@ import Skill from "./pages/Skill";
 import SkillsSmallScreen from "./pages/Skills_SmallScreen";
 import About from "./pages/About";
 import Tutorial from "./pages/Tutorial";
+import Sound from "./components/Sound";
 
 const App = () => {
   const location = useLocation();
 
   return (
     <>
+      <Sound />
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Start />} />

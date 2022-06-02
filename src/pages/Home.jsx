@@ -113,7 +113,6 @@ const Home = () => {
           exit="exit"
           transition={NavTransition}
         >
-          <Sound />
           <LinkButton
             className="absolute z-10 right-0 text-2xl px-5 py-2"
             src={svg.mail}
