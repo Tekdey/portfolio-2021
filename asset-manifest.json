@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/portfolio-2021/static/css/main.5deea2d2.css",
+    "main.js": "/portfolio-2021/static/js/main.af40585f.js",
+    "static/js/845.41a3a706.chunk.js": "/portfolio-2021/static/js/845.41a3a706.chunk.js",
+    "static/media/sunday_vibe.mp3": "/portfolio-2021/static/media/sunday_vibe.51d869ccbc17e78f881e.mp3",
+    "static/media/youtube.gif": "/portfolio-2021/static/media/youtube.4bcae3cfb93b386b42f8.gif",
+    "static/media/twitter.gif": "/portfolio-2021/static/media/twitter.a95da107ca4c00b114ba.gif",
+    "static/media/panda.png": "/portfolio-2021/static/media/panda.06b01a724d648fa49dc4.png",
+    "static/media/linkedin.gif": "/portfolio-2021/static/media/linkedin.f291e0697cd4aa5eb72f.gif",
+    "static/media/astronaute.jpg": "/portfolio-2021/static/media/astronaute.31d0ce6c5b3727422de9.jpg",
+    "static/media/github.gif": "/portfolio-2021/static/media/github.7d909b64afc22f8b5ad3.gif",
+    "index.html": "/portfolio-2021/index.html",
+    "static/media/volume_off.svg": "/portfolio-2021/static/media/volume_off.1b3a9138228491a238cda51723875112.svg",
+    "static/media/call.svg": "/portfolio-2021/static/media/call.7b752858a699a71a349c86095961c690.svg",
+    "static/media/volume_on.svg": "/portfolio-2021/static/media/volume_on.02f5fc3772a8446f71584d015ce3591b.svg",
+    "static/media/mail.svg": "/portfolio-2021/static/media/mail.b03bd8a4133404e5b3398e412b9f67ce.svg",
+    "static/media/home.svg": "/portfolio-2021/static/media/home.9d7178e77c33ecfdc314b8b987289d52.svg",
+    "main.5deea2d2.css.map": "/portfolio-2021/static/css/main.5deea2d2.css.map",
+    "main.af40585f.js.map": "/portfolio-2021/static/js/main.af40585f.js.map",
+    "845.41a3a706.chunk.js.map": "/portfolio-2021/static/js/845.41a3a706.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5deea2d2.css",
+    "static/js/main.af40585f.js"
+  ]
+}
