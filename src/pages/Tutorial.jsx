@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import {useNavigate} from "react-router-dom"
 import Panda from "../assets/images/panda.png"
-import {WorkData} from "../work_data"
+import {TutorialData} from "../tutorial_data"
 import LinkButton from "../components/LinkButton"
 
 import { motion } from "framer-motion";
@@ -176,8 +176,8 @@ const Tutorial = () => {
       >
         
         {
-          WorkData.length > 0 ? (
-        WorkData.map((card, index) => {
+          TutorialData.length > 0 ? (
+            TutorialData.map((card, index) => {
                 return (
                   <LinkButton href={card.href} externalLink={true} target={true} >
                     <motion.article 
