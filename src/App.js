@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Start from "./pages/Start";
 import Work from "./pages/Work";
 import Skill from "./pages/Skill";
-import SkillSmallScreen from "./pages/Skill_SmallScreen";
+import SkillSmallScreen from "./pages/SkillSmallScreen";
 import About from "./pages/About";
 import Tutorial from "./pages/Tutorial";
 import Sound from "./components/Sound";

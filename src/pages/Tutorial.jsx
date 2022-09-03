@@ -17,7 +17,7 @@ const Tutorial = () => {
     const navigate = useNavigate()
 
   return (
-        <div className="bg-black h-screen">
+        <main className="bg-black h-screen">
 
         <header className="h-[35vh] w-screen absolute flex justify-center items-end">
             <motion.img onClick={() => navigate('/home')} src={Panda} alt="panda" draggable="false" 
@@ -32,7 +32,7 @@ const Tutorial = () => {
 
         <motion.div variants={vTutorial.containerOrange} initial="initial" animate="animate" exit="exit" className="bg-orange-500 w-screen"></motion.div>
         <motion.div variants={vTutorial.containerBlack} initial="initial" animate="animate" exit="exit" className="bg-black"></motion.div>
-        <motion.div variants={vTutorial.containerWhite} initial="initial" animate="animate" exit="exit" className="bg-white z-40 overflow-y-scroll overflow-x-hidden flex flex-wrap justify-center pt-20 sm:p-20 gap-5">
+        <motion.section variants={vTutorial.containerWhite} initial="initial" animate="animate" exit="exit" className="bg-white z-40 overflow-y-scroll overflow-x-hidden flex flex-wrap justify-center pt-20 sm:p-20 gap-5">
         
         {TutorialData.length > 0 ? (
             TutorialData.map((card, index) => {
@@ -62,8 +62,8 @@ const Tutorial = () => {
                 )
             })) : <p>Coming soon ...</p> }
 
-      </motion.div>
-      </div>
+      </motion.section>
+      </main>
   )
 };
 

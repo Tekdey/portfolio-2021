@@ -770,4 +770,117 @@ export const vSkillSmallScreen = {
       height: "0",
     },
   },
+
+  skillContainer: {
+    initia: {
+      opacity: 0,
+    },
+    animat: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+    exi: {
+      display: "none",
+    },
+  },
+
+  skillFront: {
+    initial: {
+      width: 0,
+    },
+    animate: ({ item, index }) => ({
+      width: item.knowledge - 10 + "%",
+      transition: {
+        delay: 0.001 + index / 5,
+        duration: 0.5,
+      },
+    }),
+  },
+
+  skillBack: {
+    initial: {
+      width: 0,
+    },
+    animate: ({ item, index }) => ({
+      width: item.knowledge - 10 + "%",
+      transition: {
+        delay: 0.001 + index / 5,
+        duration: 0.5,
+      },
+    }),
+  },
+
+  containerBlackAndWhite: {
+    initial: {
+      opacity: 1,
+    },
+    animate: {
+      opacity: 0,
+    },
+  },
+
+  navigation: {
+    initial: {
+      height: "0",
+    },
+    animate: {
+      height: "86px",
+    },
+    exit: {
+      top: "100vh",
+    },
+  },
+
+  logo: {
+    initial: {
+      scale: 0,
+      x: "-50%",
+      y: "-50%",
+    },
+    animate: {
+      scale: 1,
+      x: "-50%",
+      y: "-50%",
+      transition: {
+        delay: 0.5,
+      },
+    },
+    hover: {
+      scale: 0.9,
+    },
+    tap: {
+      scale: 1.2,
+    },
+    exit: {
+      scale: 0,
+      transition: {
+        ease: "easeInOut",
+      },
+    },
+  },
+};
+
+export const vLogo = {
+  initial: {
+    scale: 0,
+    x: "-50%",
+    y: "-50%",
+  },
+  visible: {
+    scale: 1,
+    x: "-50%",
+    y: "-50%",
+  },
+  hover: {
+    scale: 0.9,
+  },
+  tap: {
+    scale: 1.2,
+  },
+  exit: {
+    scale: 0,
+    transition: { ease: "easeInOut" },
+  },
 };

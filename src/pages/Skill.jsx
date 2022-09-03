@@ -28,7 +28,7 @@ console.log(smallDevice);
   
 
   return (
-      <div className="flex flex-col h-full w-full">
+      <main className="flex flex-col h-full w-full">
         {/* 
         *                         First Layer (Orange) 
         */}
@@ -119,7 +119,7 @@ console.log(smallDevice);
                 </div>
             </div>    
         </motion.section>
-    </div>
+    </main>
   );
 };
 
