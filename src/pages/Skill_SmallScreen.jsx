@@ -5,8 +5,10 @@ import Panda from "../assets/images/panda.png";
 import { SkillFrontData } from "../skill_front";
 import { SkillBackData } from "../skill_back";
 
+import {vSkillSmallScreen} from "../utils/framerMotion"
 
-const SkillBack = () => {
+
+const SkillSmallScreen = () => {
 
   const local = JSON.parse(localStorage.getItem('skill'))
   const navigate = useNavigate()
@@ -35,88 +37,24 @@ const SkillBack = () => {
         {/* 
         *                         First Layer (Orange) 
         */}
-         <motion.div
-            className="bg-orange-500"
-            initial= {{
-              position: "absolute",
-              height: "0",
-              width: "100vw"
-            }}
-            animate= {{
-              height: "0",
-              width: "100vw",
-              display: "none"
-            }}
-            exit= {{
-              height: "100vh",
-              width: "100vw",
-              position: "absolute",
-              transition: {
-                  delay: 0.5, 
-              }
-            }}
-        ></motion.div>
+         <motion.div variants={vSkillSmallScreen.containerOrange} initial="initial" animate="animate" exit="exit" className="bg-orange-500"></motion.div>
+            
         {/* 
         *                         Logo 
         */}
          {
            !smallDevice && (
-            <motion.img
-            src={Panda}
-            onClick={() => navigate('/home')}
-            alt="panda"
-            className={
-            "h-[100px] sm:h-[150px] md:h-[250px] xl:h-[300px] cursor-pointer absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            }
-            draggable="false"
-            initial={{
-              scale: 0,
-              x: "-50%",
-              y: "-50%",
-            }}
-            animate={{
-              scale: 1,
-              x: "-50%",
-              y: "-50%",
-              transition: {
-                delay: 0.5
-              }
-            }}
-            whileHover={{
-              scale: 0.9
-            }}
-            whileTap={{
-              scale: 1.2,
-            }}
-            exit={{
-              scale: 0,
-              transition: { ease: "easeInOut" },
-            }}
-        />
+            <motion.img onClick={() => navigate('/home')} src={Panda} alt="panda" draggable="false"
+            variants={vSkillSmallScreen.logo} initial="initial" animate="animate" whileHover="hover" whileTap="tap" exit="exit"
+            className="h-[100px] sm:h-[150px] md:h-[250px] xl:h-[300px] cursor-pointer absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"/>
            )
          }
         {/* 
         *                         Second layer (Black) 
         */}
-        <motion.div
-            className="bg-black "
-            initial={{
-              height: "50vh",
-              width: "100vw",
-            }}
-            animate={{
-              height: "9vh",
-              width: "100vw",
-            }}
-            exit={{
-              height: "100vh",
-              width: "100vw",
-            }}>
-
-            <motion.h1 
-            className="text-white w-full h-full flex justify-center items-center text-4xl" 
-            exit={{display: "none"}}
-            >
+        <motion.div variants={vSkillSmallScreen.containerBlack} initial="initial" animate="animate" exit="exit" className="bg-black">
+            
+            <motion.h1 exit={{display: "none"}} className="text-white w-full h-full flex justify-center items-center text-4xl" >
               {isFront ? "Front" : "Back"}
             </motion.h1> 
 
@@ -124,21 +62,8 @@ const SkillBack = () => {
         {/* 
         *                         Third layer (White) 
         */}
-        <motion.div
-            className="bg-white"
-            initial={{
-              height: "50vh",
-              with: "100vw",
-            }}
-            animate={{
-            height: "100vh",
-            with: "100vw",
-              
-          }}
-            exit={{
-              height: "0",
-            }}
-        >
+        <motion.div variants={vSkillSmallScreen.containerWhite} initial="initial" animate="animate" exit="exit" className="bg-white">
+           
           {
              //             Contenu
           }
@@ -274,4 +199,4 @@ const SkillBack = () => {
   );
 };
 
-export default SkillBack;
+export default SkillSmallScreen;
