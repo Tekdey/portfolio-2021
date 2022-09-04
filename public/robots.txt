@@ -1,2 +1,3 @@
+Sitemap: https://www.nathanbardi.com/sitemap.xml
 User-agent: *
-Disllow:
+Disallow:

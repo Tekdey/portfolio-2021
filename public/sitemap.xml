@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+
+      <loc>http://www.nathanbardi.com/</loc>
+
+      <lastmod>2022-09-04</lastmod>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.nathanbardi.com/home</loc>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>1.0</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.nathanbardi.com/work</loc>
+
+      <lastmod>2022-09-04</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.nathanbardi.com/skills</loc>
+
+      <lastmod>2022-09-04</lastmod>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.nathanbardi.com/skills/smallScreen</loc>
+
+      <lastmod>2022-09-04</lastmod>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.nathanbardi.com/about</loc>
+
+      <lastmod>2022-09-04</lastmod>
+
+   </url>
+
+   <url>
+
+      <loc>https://www.nathanbardi.com/tutorial</loc>
+
+      <lastmod>2022-09-04</lastmod>
+
+      <changefreq>montly</changefreq>
+
+   </url>
+
+</urlset>
