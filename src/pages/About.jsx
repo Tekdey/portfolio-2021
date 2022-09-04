@@ -31,7 +31,7 @@ const About = () => {
             <motion.img onClick={() => navigate('/home')} src={Panda} alt="panda" draggable="false" 
                   variants={vAbout.logo} whileHover="hover" whileTap="tap" initial="initial" animate="visible" exit="exit"
                     className="h-[150px] md:h-[200px] xl:h-[200px] cursor-pointer z-10 absolute left-1/2 top-1/3"/>
-            <motion.h1 variants={vAbout.title} initial="initial" animate="animate" exit="exit" className="bottom-0 text-white text-5xl">About</motion.h1>
+            <motion.h1 variants={vAbout.title} initial="initial" animate="animate" exit="exit" className="bottom-0 text-white text-5xl">A propos</motion.h1>
         </header>
 
         {/*
@@ -54,30 +54,29 @@ const About = () => {
                             lg:leading-loose lg:text-xl 
                             xl:leading-loose xl:text-xl 
                             2xl:leading-loose 2xl:text-xl">
-                            <h3 className="p-3 font-semibold self-center text-center">Hey I'm <span className="font-bold">Nathan Bardi</span>, a developer located in France. </h3>
+                            <h3 className="p-3 font-semibold self-center text-center">Je suis <span className="font-bold">Nathan Bardi</span>, un developpeur Javascript situé en France !</h3>
+                            <p>Coder est une passion depuis que j'ai 13 ans, j'aime créer des sites avec une experience utilisateur hors du commun mais je me doit d'être également dans l'ombre pour créer un back end avec une optimisation pointilleuse.</p>
+                            {/* <p>Coding has been my hobbit since I was 13, I like to create beautiful websites with a good user experience and I also have to be in the shadows to create the back end of a website. </p> */}
 
-                            <p>Coding has been my hobbit since I was 13, I like to create beautiful websites with a good user experience and I also have to be in the shadows to create the back end of a website. </p>
-
-                            <p>Currently I'm a student at O'Clock School, I'm also a blogger. </p>
-
-                            <p> I like to write tutorial blogs to help people who want to learn to code. </p>
+                            <p>Actuellement je suis un étudiant chez O'Clock, je suis aussi un blogger</p>
+                            <p>J'aime écrire des tutoriels pour aider les personnes qui veulent apprendre le code.</p>
+                            {/* <p> I like to write tutorial blogs to help people who want to learn to code. </p> */}
                             
-                            <p className="p-5 self-center text-center">You can contact me by <LinkButton className="underline" href="mailto:devw.nbardi@gmail.com" externalLink={true}>email</LinkButton> or my <span onClick={handleClick} className="underline cursor-pointer">social network</span>.</p>
+                            <p className="p-5 self-center text-center">Vous pouvez me contacter <LinkButton className="underline" href="mailto:devw.nbardi@gmail.com" externalLink={true}>email</LinkButton> ou par <span onClick={handleClick} className="underline cursor-pointer">réseaux sociaux</span>.</p>
                               <div className="justify-center flex w-full">
                                   <ul className={social ? "flex gap-10 justify-center border-b-2 border-red-700" : "flex gap-10 w-full justify-center"}>
-                                  <li>
-                                      <LinkButton className="w-10" target={true} href="https://github.com/Tekdey" src={GithubLogo} alt="github" draggable="false" externalLink={true} />
-                                  </li>
-                                  <li>
-                                      <LinkButton className="w-10" target={true} href="https://twitter.com/BardiNathan" src={TwitterLogo} alt="twitter" draggable="false" externalLink={true}/>
-                                  </li>
-                                  <li>
-                                      <LinkButton className="w-10" target={true} href="https://www.linkedin.com/in/nathan-bardi/" src={LinkedinLogo} alt="linkedin" draggable="false" externalLink={true} />
-                                  </li>
-                                  <li>
-                                      <LinkButton className="w-10" target={true} href="https://www.youtube.com/channel/UC80SONzT-LFpHFpYoJigBfQ" src={YoutubeLogo} alt="youtube" draggable="false" externalLink={true} />
-                                  </li>
-                                  
+                                    <li className="w-10">
+                                        <LinkButton target={true} href="https://github.com/Tekdey" src={GithubLogo} alt="github" draggable="false" externalLink={true} />
+                                    </li>
+                                    <li className="w-10">
+                                        <LinkButton target={true} href="https://twitter.com/BardiNathan" src={TwitterLogo} alt="twitter" draggable="false" externalLink={true}/>
+                                    </li>
+                                    <li className="w-10">
+                                        <LinkButton target={true} href="https://www.linkedin.com/in/nathan-bardi/" src={LinkedinLogo} alt="linkedin" draggable="false" externalLink={true} />
+                                    </li>
+                                    <li className="w-10">
+                                        <LinkButton target={true} href="https://www.youtube.com/channel/UC80SONzT-LFpHFpYoJigBfQ" src={YoutubeLogo} alt="youtube" draggable="false" externalLink={true} />
+                                    </li>
                                   </ul>
                               </div>
                 </motion.div>

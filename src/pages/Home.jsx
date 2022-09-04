@@ -22,16 +22,16 @@ const Home = () => {
         </motion.li>
 
         <motion.li variants={vHome.navLeft} initial="initial" animate="animate" exit="exit" transition={vHome.navTransition} className="h-screen text-orange-500 text-2xl justify-center items-center flex py-5 absolute left-0" >
-          <LinkButton href="/about" className="-rotate-90 mix-blend-difference" draggable="false" externalLink={false}>About</LinkButton>
+          <LinkButton href="/about" className="-rotate-90 mix-blend-difference" draggable="false" externalLink={false}>A propos</LinkButton>
         </motion.li>
 
         <motion.li variants={vHome.navRight} initial="initial" animate="animate" exit="exit" transition={vHome.navTransition} className="h-screen text-orange-500 text-2xl justify-center items-center flex py-5 absolute right-0">
-          <LinkButton href="/tutorial" className=" rotate-90 mix-blend-difference" draggable="false" externalLink={false}>Tutorial</LinkButton>
+          <LinkButton href="/tutorial" className=" rotate-90 mix-blend-difference" draggable="false" externalLink={false}>Tutoriel</LinkButton>
         </motion.li>
 
         <motion.li variants={vHome.navBottom} initial="initial" animate="animate" exit="exit" transition={vHome.navTransition} className="w-screen text-orange-500 text-2xl justify-around items-center flex py-5 absolute bottom-0">
-          <LinkButton href="/work" draggable="false" externalLink={false}>Work</LinkButton>
-          <LinkButton href="/skills" draggable="false" externalLink={false}>Skills</LinkButton>
+          <LinkButton href="/work" draggable="false" externalLink={false}>Projets</LinkButton>
+          <LinkButton href="/skills" draggable="false" externalLink={false}>Compétences</LinkButton>
         </motion.li>
 
       </ul>

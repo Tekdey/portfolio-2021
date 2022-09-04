@@ -23,7 +23,7 @@ const Tutorial = () => {
             <motion.img onClick={() => navigate('/home')} src={Panda} alt="panda" draggable="false" 
                     variants={vTutorial.logo} whileHover="hover" whileTap="tap" initial="initial" animate="visible" exit="exit"
                     className="h-[150px] md:h-[200px] xl:h-[250px] cursor-pointer z-10 absolute left-1/2 top-1/2"/>
-            <motion.h1 variants={vTutorial.title} initial="initial" animate="animate" exit="exit" className="bottom-0 text-white text-5xl" >Tutorial</motion.h1>
+            <motion.h1 variants={vTutorial.title} initial="initial" animate="animate" exit="exit" className="bottom-0 text-white text-5xl" >Tutoriel</motion.h1>
         </header>
 
         {/*

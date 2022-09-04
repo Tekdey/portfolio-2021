@@ -19,7 +19,7 @@ function Start() {
       <motion.div variants={vStart.containerBlack} initial="initial" exit="exit" className="bg-black"></motion.div>
        
       <Logo handleStart={handleStart} />
-      <motion.span variants={vStart.logo_Span} initial="initial" animate="animate" exit="exit" className="absolute top-1/3 left-1/2 text-orange-500 -translate-x-1/2 translate-y-5 mix-blend-difference cursor-pointer">Click here</motion.span>
+      <motion.span variants={vStart.logo_Span} initial="initial" animate="animate" exit="exit" className="absolute top-1/3 left-1/2 text-orange-500 -translate-x-1/2 translate-y-5 mix-blend-difference cursor-pointer">Clique sur moi</motion.span>
     </motion.main>
   );
 }

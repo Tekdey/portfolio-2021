@@ -21,7 +21,7 @@ const Work = () => {
                 draggable="false" variants={vWork.logo} whileHover="hover" whileTap="tap"initial="initial" animate="visible" exit="exit"
                 className="h-[150px] md:h-[200px] xl:h-[250px] cursor-pointer z-10 absolute left-1/2 top-1/2"/>   
 
-                <motion.h1 variants={vWork.title} initial="initial" animate="animate" exit="exit" className="bottom-0 text-white text-5xl" >Work</motion.h1>  
+                <motion.h1 variants={vWork.title} initial="initial" animate="animate" exit="exit" className="bottom-0 text-white text-5xl" >Projets</motion.h1>  
             </header>
 
         {/*
