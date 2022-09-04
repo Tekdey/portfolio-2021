@@ -25,7 +25,7 @@ const About = () => {
 
 
   return (
-        <div className="bg-black h-screen">
+        <main className="bg-black h-screen">
 
         <header className="h-[25vh] w-screen absolute flex justify-center items-end">
             <motion.img onClick={() => navigate('/home')} src={Panda} alt="panda" draggable="false" 
@@ -42,6 +42,10 @@ const About = () => {
         <motion.div variants={vAbout.containerBlack} initial="initial" animate="animate" exit="exit" className="bg-black"></motion.div>
         <motion.section variants={vAbout.containerWhite} initial="initial" animate="animate" exit="exit" className="z-40 md:p-20 flex bg-white"> 
         
+        {/*
+        *         Content
+        */}
+
           <article className="flex">
                 <motion.div variants={vAbout.article} initial="initial" animate="animate"
                             className="border-3 border-black sm:drop-shadow-lg p-5 flex flex-col items-start justify-center bg-white
@@ -60,12 +64,21 @@ const About = () => {
                             
                             <p className="p-5 self-center text-center">You can contact me by <LinkButton className="underline" href="mailto:devw.nbardi@gmail.com" externalLink={true}>email</LinkButton> or my <span onClick={handleClick} className="underline cursor-pointer">social network</span>.</p>
                               <div className="justify-center flex w-full">
-                                  <div className={social ? "flex gap-10 justify-center border-b-2 border-red-700" : "flex gap-10 w-full justify-center"}>
-                                  <LinkButton className="w-10" target={true} href="https://github.com/Tekdey" src={GithubLogo} alt="github" draggable="false" externalLink={true} />
-                                  <LinkButton className="w-10" target={true} href="https://twitter.com/BardiNathan" src={TwitterLogo} alt="twitter" draggable="false" externalLink={true}/>
-                                  <LinkButton className="w-10" target={true} href="https://www.linkedin.com/in/nathan-bardi/" src={LinkedinLogo} alt="linkedin" draggable="false" externalLink={true} />
-                                  <LinkButton className="w-10" target={true} href="https://www.youtube.com/channel/UC80SONzT-LFpHFpYoJigBfQ" src={YoutubeLogo} alt="youtube" draggable="false" externalLink={true} />
-                                  </div>
+                                  <ul className={social ? "flex gap-10 justify-center border-b-2 border-red-700" : "flex gap-10 w-full justify-center"}>
+                                  <li>
+                                      <LinkButton className="w-10" target={true} href="https://github.com/Tekdey" src={GithubLogo} alt="github" draggable="false" externalLink={true} />
+                                  </li>
+                                  <li>
+                                      <LinkButton className="w-10" target={true} href="https://twitter.com/BardiNathan" src={TwitterLogo} alt="twitter" draggable="false" externalLink={true}/>
+                                  </li>
+                                  <li>
+                                      <LinkButton className="w-10" target={true} href="https://www.linkedin.com/in/nathan-bardi/" src={LinkedinLogo} alt="linkedin" draggable="false" externalLink={true} />
+                                  </li>
+                                  <li>
+                                      <LinkButton className="w-10" target={true} href="https://www.youtube.com/channel/UC80SONzT-LFpHFpYoJigBfQ" src={YoutubeLogo} alt="youtube" draggable="false" externalLink={true} />
+                                  </li>
+                                  
+                                  </ul>
                               </div>
                 </motion.div>
                 
@@ -74,7 +87,7 @@ const About = () => {
           </article>
 
       </motion.section>
-      </div>
+      </main>
   )
 };
 

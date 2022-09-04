@@ -11,7 +11,7 @@ function Start() {
   };
 
   return (
-    <motion.div variants={vStart.container} initial="hidden" animate="visible" exit="exit" className="flex h-screen">
+    <motion.main variants={vStart.container} initial="hidden" animate="visible" exit="exit" className="flex h-screen">
       {/* 
       *     Animated containers
       */}
@@ -20,7 +20,7 @@ function Start() {
        
       <Logo handleStart={handleStart} />
       <motion.span variants={vStart.logo_Span} initial="initial" animate="animate" exit="exit" className="absolute top-1/3 left-1/2 text-orange-500 -translate-x-1/2 translate-y-5 mix-blend-difference cursor-pointer">Click here</motion.span>
-    </motion.div>
+    </motion.main>
   );
 }
 

@@ -33,7 +33,7 @@ const SkillSmallScreen = () => {
 
 
   return (
-      <div className="flex flex-col h-screen w-screen">
+      <main className="flex flex-col h-screen w-screen">
         {/* 
         *                         First Layer (Orange) 
         */}
@@ -69,10 +69,8 @@ const SkillSmallScreen = () => {
           }
          
             <motion.ul className="w-full flex flex-col p-10 mix-blend-difference"
-            initial={{opacity: 0}}
-            animate={{opacity: 1, transition: {duration: 1}}}
-            exit={{display: "none"}}
-            >
+            variants={vSkillSmallScreen.skillContainer} initial="initial" animate="animate" exit="exit">
+            
                { isFront ? (
                         SkillFrontData.map((item, index) => {
                           return (
@@ -80,9 +78,7 @@ const SkillSmallScreen = () => {
                             <h4 className=" min-w-[153px] text-white">{item.name}</h4>
                               <motion.div 
                               className="w-24 h-7 bg-white flex justify-center items-center"
-                              initial={{width: 0}}
-                              animate={{width: (item.knowledge - 10) + "%", transition:{delay: 0.001 + index / 5, duration: 0.5}}}
-                              >
+                              variants={vSkillSmallScreen.skillFront} custom={{ item, index }} initial="initial" animate="animate" exit="exit">
                                 <span className="text-black" >{item.knowledge} %</span>
                               </motion.div>
                           </li>
@@ -94,11 +90,8 @@ const SkillSmallScreen = () => {
                           return (
                             <li key={index} className="flex py-1 text-xl flex-col">
                             <h4 className=" min-w-[153px] text-white">{item.name}</h4>
-                              <motion.div 
-                              className="w-24 h-7 bg-white flex justify-center items-center"
-                              initial={{width: 0}}
-                              animate={{width: (item.knowledge - 10) + "%", transition:{delay: 0.001 + index / 5, duration: 0.5}}}
-                              >
+                              <motion.div variants={vSkillSmallScreen.skillBack} custom={{ item, index }} initial="initial" animate="animate"
+                               className="w-24 h-7 bg-white flex justify-center items-center">
                                 <span className="text-black" >{item.knowledge} %</span>
                               </motion.div>
                           </li>
@@ -108,94 +101,47 @@ const SkillSmallScreen = () => {
                           )}
                     </motion.ul>
         </motion.div>
+
         {/* 
         *                         Square layer (Back & White) 
         */}
         
-        <motion.section 
-        className="mix-blend-difference border-4 text-white border-black h-5/6 bg-blend-difference w-11/12 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-        initial={{
-          opacity: 1,
-        }}
-        animate={{
-          opacity: 0
-        }}
-        >
-          <div className=" border-4 w-full h-full flex flex-col md:flex-row">
-          
-            </div>    
+        <motion.section variants={vSkillSmallScreen.containerBlackAndWhite} initial="initial" animate="animate"
+                        className="mix-blend-difference border-4 text-white border-black h-5/6 bg-blend-difference w-11/12 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+                        <div className=" border-4 w-full h-full flex flex-col md:flex-row"></div>   
         </motion.section>
 
         {smallDevice && (   
-        <motion.nav 
-        className="w-full bottom-0 fixed border-t-4 border-black  bg-black"
-        initial={{
-          height: "0"
-        }}
-        animate={{
-          height: "86px"
-        }}
-        exit={{
-          top: "100vh"
-        }}
-        >
-          <ul className="flex justify-around items-center text-4xl w-full h-full mix-blend">
-            <li className="cursor-pointer w-full h-full">
-              <NavLink 
-              to="/skills/smallScreen" 
-              className="h-full w-full  flex items-center  justify-start pl-5 xs:justify-around" 
-              onClick={() => setIsFront(true)}
-              style={{
-                background: isFront ? "white" : "black", color: isFront ? "black" : "white" 
-              }}>
-                Front
-              </NavLink>
-              </li>
-              <motion.img
-                src={Panda}
-                onClick={() => navigate('/home')}
-                alt="panda"
-                className={
-                "h-[100px] sm:h-[150px] cursor-pointer absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                }
-                draggable="false"
-                initial={{
-                  scale: 0,
-                  x: "-50%",
-                  y: "-50%",
-                }}
-                animate={{
-                  scale: 1,
-                  x: "-50%",
-                  y: "-50%",
-                  transition: {
-                    delay: 0.5
-                  }
-                }}
-                whileHover={{
-                  scale: 0.9
-                }}
-                whileTap={{
-                  scale: 1.2,
-                }}
-                exit={{
-                  scale: 0,
-                  transition: { ease: "easeInOut" },
-                }}
-            />
-            <li className="cursor-pointer w-full h-full flex items-center justify-end xs:justify-around">
-              <NavLink to="/skills/smallScreen" className="h-full w-full  flex items-center  justify-end pr-5 xs:justify-around" 
-              onClick={() => setIsFront(false)}
-              style={{
-                background: isFront ? "black" : "white", color: !isFront ? "black" : "white" 
-              }}>
-                Back
-              </NavLink>
-              </li>
-          </ul>
-        </motion.nav>
+            <motion.nav variants={vSkillSmallScreen.navigation} initial="initial" animate="animate" exit="exit"
+                        className="w-full bottom-0 fixed border-t-4 border-black  bg-black">
+            
+                <ul className="flex justify-around items-center text-4xl w-full h-full mix-blend">
+                  
+                  <li className="cursor-pointer w-full h-full">
+                    <NavLink onClick={() => setIsFront(true)} to="/skills/smallScreen" 
+                    className="h-full w-full  flex items-center  justify-start pl-5 xs:justify-around" 
+                    style={{background: isFront ? "white" : "black", color: isFront ? "black" : "white" }}>Front</NavLink>
+                  </li>
+
+                  {/*
+                  *   logo
+                  */}
+                  
+                    <motion.img onClick={() => navigate('/home')} src={Panda} alt="panda" draggable="false"
+                      className="h-[100px] sm:h-[150px] cursor-pointer absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                      variants={vSkillSmallScreen.logo} initial="initial" animate="animate" whileHover="hover" whileTap="tap" exit="exit" />
+                
+                    <li className="cursor-pointer w-full h-full flex items-center justify-end xs:justify-around">
+                      <NavLink onClick={() => setIsFront(false)} to="/skills/smallScreen" 
+                      className="h-full w-full  flex items-center  justify-end pr-5 xs:justify-around"
+                      style={{
+                        background: isFront ? "black" : "white", color: !isFront ? "black" : "white" 
+                      }}>Back</NavLink>
+                    </li>
+                </ul>
+            </motion.nav>
         )}
-   </div>
+   </main>
   );
 };
 
